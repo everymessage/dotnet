@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netstandard1.3</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Features>IOperation</Features>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyOriginatorKeyFile>everymessage.pfx</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <Deterministic>true</Deterministic>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Description>everymessage Workflow Server Client</Description>
+    <PackageTags>workflow everymessage sms email flow</PackageTags>
+    <Copyright>Copyright © 2019 everymessage ltd.</Copyright>
+    <Authors>everymessage ltd.</Authors>
+    <PackageIconUrl>https://www.everymessage.com/favicon-96x96.png</PackageIconUrl>
+    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/everymessage/dotnet/everymessage.Workflow.V1</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/everymessage/dotnet/everymessage.Workflow.V1</RepositoryUrl>
+    <PackageId>everymessage.Workflow.V1</PackageId>
+    <Product>everymessage.Workflow.V1</Product>
+	<PackageReleaseNotes>First release.</PackageReleaseNotes>
+    <DelaySign>false</DelaySign>
+    <Company>everymessage ltd.</Company>
+    <AssemblyName>everymessage.Workflow.V1</AssemblyName>
+	<Title>everymessage.Workflow.V1</Title>
+    <RootNamespace>everymessage.Workflow.V1</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WorkflowClient.cs~RF7c91c9e3.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\everymessage.WebAPI\everymessage.WebAPI\everymessage.WebAPI.csproj" />
+  </ItemGroup>
+
+</Project>
