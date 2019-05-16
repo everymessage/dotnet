@@ -14,41 +14,33 @@
 //
 // engineers@everymessage.com
 
+using System;
 using Newtonsoft.Json;
-
-using everymessage.WebAPI.Json;
 
 namespace everymessage.Smpp.V1
 {
     /// <summary>
-    /// The sms message.
+    /// The remote SIM sms message.
     /// </summary>
-    public class SmsMessage
+    public class RemoteSimSmsMessage
     {
-        /// <summary>
-        /// OPTIONAL. 
-        /// Gets or sets message reference. 
-        /// This is your unique reference to the message for traceability.
-        /// </summary>
-        public string Reference { get; set; }
 
         /// <summary>
         /// REQUIRED. 
-        /// Gets or sets originator for this message. 
-        /// Originator can be 11 alpha character without space or a 12 digits number.
+        /// Gets or sets sender's number. 
         /// </summary>
         public string Sender { get; set; }
 
         /// <summary>
         /// REQUIRED. 
-        /// Gets or sets recipient numbers. 
-        /// You can set one or more recipient numbers.
+        /// Gets or sets recipient's number. 
         /// </summary>
-        public SmsRecipients Recipient { get; set; }
+
+        public string Recipient { get; set; }
 
         /// <summary>
         /// OPTIONAL. 
-        /// Gets or sets if message encoding. 
+        /// Gets or sets message encoding. 
         /// Default is SMSC Default Alphabet.
         /// </summary>
         public SmsEncoding? Encoding { get; set; }
@@ -59,26 +51,11 @@ namespace everymessage.Smpp.V1
         /// </summary>
         public string Content { get; set; }
 
-        /// <summary>
-        /// OPTIONAL. 
-        /// Gets or sets registered delivery. 
-        /// Default is false.
-        /// </summary>
-        public bool? RegisteredDelivery { get; set; }
 
         /// <summary>
-        /// OPTIONAL.
-        /// Gets or sets custom message variable names.
+        /// REQUIRED. 
+        /// Gets or sets sms tlv.
         /// </summary>
-        public string[] Variables { get; set; }
-
-        /// <summary>
-        /// Gets json for this sms message.
-        /// </summary>
-        /// <returns></returns>
-        public string ToJsonString()
-        {
-            return JsonConvert.SerializeObject(this, JsonDefaults.DEFAULT_SERIALIZER_SETTINGS);
-        }
+        public string TLV { get; set; }
     }
 }

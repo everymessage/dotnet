@@ -22,17 +22,17 @@ namespace everymessage.Smpp.V1
     /// <summary>
     /// Makes request towards everymessage SMS Exchange HTTP server.
     /// </summary>
-    internal class SubmitServiceRequest : SmppServiceRequest<SubmitResponse>
+    internal class RemoteSimServiceRequest : SmppServiceRequest<SubmitRemoteSimResponse>
     {
 
-        private readonly SubmitRequest _body;
+        private readonly RemoteSimRequest _body;
 
         /// <summary>
-        /// Constructs a new SubmitServiceRequest.
+        /// Constructs a new RemoteSimServiceRequest.
         /// </summary>
         /// <param name="service"></param>
         /// <param name="body"></param>
-        public SubmitServiceRequest(BaseRestService service, SubmitRequest body) : base(service)
+        public RemoteSimServiceRequest(BaseRestService service, RemoteSimRequest body) : base(service)
         {
             _body = body;
         }
@@ -50,7 +50,7 @@ namespace everymessage.Smpp.V1
         /// <summary>
         /// <inheritdoc />
         /// </summary>
-        public override string MethodName { get => "submit"; }
+        public override string MethodName { get => "remote_sim"; }
 
         /// <summary>
         /// <inheritdoc />

@@ -14,12 +14,19 @@
 //
 // engineers@everymessage.com
 
-using everymessage.WebAPI.Services;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace everymessage.Smpp.V1
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
-    public class SubmitResponse : BaseRestServiceResponse<SubmitResponseBody> {  }
+    public class RemoteSimRequest
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<RemoteSimSmsMessage> Messages { get; set; }
+    }
 }

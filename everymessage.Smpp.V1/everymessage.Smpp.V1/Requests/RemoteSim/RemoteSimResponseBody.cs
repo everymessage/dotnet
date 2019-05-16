@@ -14,36 +14,27 @@
 //
 // engineers@everymessage.com
 
-using everymessage.WebAPI.Auth;
-using everymessage.WebAPI.Services;
+using System.Collections.Generic;
 
 namespace everymessage.Smpp.V1
 {
     /// <summary>
     /// 
     /// </summary>
-    internal class SmppService : BaseRestService
+    public class RemoteSimResponseBody
     {
-
-        private readonly string _endPoint;
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<RemoteSimSmsSubmission> Submissions { get; set; }
 
         /// <summary>
-        /// Constructs new SmsService.
+        /// 
         /// </summary>
-        /// <param name="endPoint">API endPoint.</param>
-        /// <param name="credentials">everymessageCredential instance.</param>
-        public SmppService(string endPoint, everymessageCredential credentials) : base(credentials) {
-            _endPoint = endPoint;
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"Submissions: {Submissions?.Count}";
         }
-
-        /// <summary>
-        /// Gets base url of the everymessage Smpp HTTP server.
-        /// </summary>
-        public override string BaseUrl => _endPoint;
-
-        /// <summary>
-        /// Gets current web api version.
-        /// </summary>
-        public override string Version => "v1";
     }
 }

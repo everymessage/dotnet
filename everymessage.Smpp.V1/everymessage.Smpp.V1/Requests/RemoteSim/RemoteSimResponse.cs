@@ -21,5 +21,5 @@ namespace everymessage.Smpp.V1
     /// <summary>
     /// 
     /// </summary>
-    public class SubmitResponse : BaseRestServiceResponse<SubmitResponseBody> {  }
+    public class SubmitRemoteSimResponse : BaseRestServiceResponse<RemoteSimResponseBody> {  }
 }

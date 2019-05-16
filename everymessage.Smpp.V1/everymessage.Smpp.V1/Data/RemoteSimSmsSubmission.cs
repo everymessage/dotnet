@@ -14,65 +14,42 @@
 //
 // engineers@everymessage.com
 
+using System;
 using Newtonsoft.Json;
 
 namespace everymessage.Smpp.V1
 {
-
     /// <summary>
-    /// The sms submission.
+    /// The remote SIM submission info.
     /// </summary>
-    public class SmsSubmission
+    public class RemoteSimSmsSubmission
     {
         /// <summary>
-        /// Gets submission id.
+        /// 
         /// </summary>
         public long Id { get; set; }
 
         /// <summary>
-        /// Gets submission reference.
+        /// 
         /// </summary>
-        public string Reference { get; set; }
-
-        /// <summary>
-        /// Gets submission status.
-        /// </summary>
-        public SmsSubmissionStatus Status { get; set; }
-
-        /// <summary>
-        /// Gets submission recipient.
-        /// </summary>
-        public string Recipient { get; set; }
-
-        /// <summary>
-        /// Gets submission originator.
-        /// </summary>
-        public string Sender { get; set; }
-
-        /// <summary>
-        /// Gets message content.
-        /// </summary>
-        public string Content { get; set; }
-
-        /// <summary>
-        /// Gets number of message segments.
-        /// </summary>
-        public byte? Segments { get; set; }
-
-        /// <summary>
-        /// Gets how much this request was charged.
-        /// </summary>
-        public decimal? Charged { get; set; }
+        public RemoteSimSmsSubmissionStatus Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            return $"Id: {Id} ¦ To: {Recipient} ¦ Ref: {Reference} ¦ Sta: {Status} ¦ Charged: {Charged} ¦ Msg: {Content}";
-        }
 
+        public string Sender { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+
+        public string Recipient { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+
+        public int Segments { get; set; }
     }
-
 }
